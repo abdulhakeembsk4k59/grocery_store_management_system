@@ -92,6 +92,45 @@ after running it if you get any error it means you have not done the steps perfe
 if you did all things good then you shoud see output as blank because we just connected to database, we didn't printed anythign yet.
 
 ### Executing Query through python
-after creating connection we have to execute queries right 
+after creating connection we have to execute queries right!, so we used a variable cnx to store this connection.
+so we have `.execute()` method through which we can run our queries.
+example :- 
+```
+import mysql.connector
+
+cnx = mysql.connector.connect(user='root', password='root',
+        host='127.0.0.1',
+        database='gs')
+
+cursor = cnx.cursor()
+query = "select * from gs.products"
+
+cursor.execute(query)
+```
+*once query is executed the results are in cursor.*
+### Printing Resutls of cursor :
+So to print those results or we can say that to itrate through those touples we can make use of foreach loop.
+note: here touples mean each colum_name of our table which has multiple entries.
+
+example :-
+```
+import mysql.connector
+
+cnx = mysql.connector.connect(user='root', password='root',
+                              host='127.0.0.1',
+                              database='gs')
+
+cursor = cnx.cursor()
+query = "select * from gs.products"
+
+cursor.execute(query)
+
+for(product_id, name, uom_id, price_per_unit) in cursor:
+    print(product_id,name,uom_id,price_per_unit)
+cnx.close()
+```
+
+**after our work we have to close the connection that why i have used `cnx.close()` method.**
+
 
 
