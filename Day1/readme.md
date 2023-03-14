@@ -10,6 +10,7 @@ First of all you have to download mySQL Workbench : https://dev.mysql.com/downlo
 
 ### 2.create tables (order_details, orders, products, uom) in it :
 1. Create products table :- 
+```
 CREATE TABLE `products` (
   `product_name` varchar(100) NOT NULL,
   `product_id` int NOT NULL AUTO_INCREMENT,
@@ -19,24 +20,33 @@ CREATE TABLE `products` (
   KEY `fk_uom_id_idx` (`uom_id`),
   CONSTRAINT `fk_uom_id` FOREIGN KEY (`uom_id`) REFERENCES `uom` (`uom_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
+
 
 2. Create UOM(unit of mesurment) Table :- 
+```
 CREATE TABLE `uom` (
   `uom_id` int NOT NULL AUTO_INCREMENT,
   `uom_name` varchar(45) NOT NULL,
   PRIMARY KEY (`uom_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
+
 
 3. Create orders table :- 
- CREATE TABLE `orders` (
+```
+CREATE TABLE `orders` (
   `order_id` int NOT NULL AUTO_INCREMENT,
   `customer_name` varchar(45) NOT NULL,
   `total` double NOT NULL,
   `datetime` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci; 
+```
+
 
 4. Create order_details Table :- 
+```
 CREATE TABLE `order_details` (
   `order_id` int NOT NULL,
   `product_id` int NOT NULL,
@@ -47,7 +57,7 @@ CREATE TABLE `order_details` (
   CONSTRAINT `fk_order_id` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON UPDATE RESTRICT,
   CONSTRAINT `fk_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+```
 * after creating all tables add some possible entries in it, so we can further practice on it *
 
 # Part 2
@@ -82,6 +92,6 @@ after running it if you get any error it means you have not done the steps perfe
 if you did all things good then you shoud see output as blank because we just connected to database, we didn't printed anythign yet.
 
 ### Executing Query through python
-after creating connection we have to execute queries right  
+after creating connection we have to execute queries right 
 
 
