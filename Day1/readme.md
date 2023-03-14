@@ -82,6 +82,6 @@ after running it if you get any error it means you have not done the steps perfe
 if you did all things good then you shoud see output as blank because we just connected to database, we didn't printed anythign yet.
 
 ### Executing Query through python
-after creating connection we have to execute queries right 
+after creating connection we have to execute queries right  
 
 
