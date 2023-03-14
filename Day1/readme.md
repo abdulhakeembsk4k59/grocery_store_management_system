@@ -51,5 +51,5 @@ CREATE TABLE `order_details` (
 
 # Part 2
 ## Open this Documentation : 
-<a herf="https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html">Click Here</a>
+<a href="https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html">Click Here</a>
 
