@@ -48,8 +48,40 @@ CREATE TABLE `order_details` (
   CONSTRAINT `fk_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+* after creating all tables add some possible entries in it, so we can further practice on it *
 
 # Part 2
 ## Open this Documentation : 
 <a href="https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html">Click Here</a>
+
+*so in this step like we do (add details in tables) using workbench software now we have to do same thing using python api.*
+so to achieve this we have to install mySQL connector module for python 
+#### command to install mysql connector module for python :
+`pip install mysql-connector-python`
+
+we have two folders named "ui" and "backend" right
+1. open backend folder
+2. create products_dao.py file init
+
+
+now we are going to connect our database and mange products through products_dao.py :
+1. paste this code in your products__dao.py file :
+```
+import mysql.connector
+
+cnx = mysql.connector.connect(user='root'password='root',
+    host='127.0.0.1',
+    database='gs')
+cnx.close()
+```
+2. Run it
+
+note : username and password and database_name must be asitis like you have created while u installing mySql_workbench software
+
+after running it if you get any error it means you have not done the steps perfectly.
+if you did all things good then you shoud see output as blank because we just connected to database, we didn't printed anythign yet.
+
+### Executing Query through python
+after creating connection we have to execute queries right 
+
 
