@@ -130,20 +130,3 @@ if __name__=='__main__':
 <img src="https://i.ibb.co/2PPTPc9/image.png"/>
 
 
-
-# inserting products into grocery_store (gs) database through python code
-
-in mySql we use `insert into` command to insert value to our db table
-### consider this Query as a example for inserting values into products table in our gs database :
-
-```
-insert into products (name, uom_id, price_per_unit)
-values('sprite', '3', '49');
-
-```
-
-#### Output would be like : 
-<img src="https://i.ibb.co/10jDdsB/image.png"/>
-
-## lets do the same task using pyhton code :
-
