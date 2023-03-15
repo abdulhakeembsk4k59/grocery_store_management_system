@@ -43,3 +43,31 @@ if __name__=='__main__':
 ```
 ### output would be like :
 <img src="https://i.ibb.co/ZGxzv4Z/image.png"/>
+
+
+# Deletion of products from grocery_store (gs) database through python code :
+
+### consider this code example for deletion :
+```
+# deletion of products
+def delete_product(connection, product_id):
+    cursor = connection.cursor()
+    query = "DELETE FROM products where product_id="+str(product_id)
+    cursor.execute(query)
+    connection.commit()
+
+
+if __name__=='__main__':
+    connection = get_sql_connection()
+
+    # for deletion :
+    #it will return none but element containing product_id 9 would be deleted
+    print(delete_product(connection, 9)) 
+
+```
+
+### Output would be like :
+<img src="https://i.ibb.co/BCMqh3V/image.png"/>
+
+here you can see product `cabage` which is having product_id `9` has been deleted.
+
