@@ -9,6 +9,7 @@ First of all you have to download mySQL Workbench : https://dev.mysql.com/downlo
 `create schema gs;`
 
 ### 2.create tables (order_details, orders, products, uom) in it :
+***Note: You can make use of GUI too***
 1. Create products table :- 
 ```
 CREATE TABLE `products` (
