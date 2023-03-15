@@ -1,4 +1,4 @@
-# Grocery Store Management System | Day 3
+# Grocery Store Management System | Day 2
 
 ## Joining uom_name column from uom table with product table details
 Note :- Here i'm doing this because i want to show each products unit name along with it's remaining details. if it is a rice then we have to show it's unit_name as `kg`,
@@ -129,4 +129,21 @@ if __name__=='__main__':
 ### and output would be the same as before 
 <img src="https://i.ibb.co/2PPTPc9/image.png"/>
 
-inserting products into grocery_store (gs) database
+
+
+# inserting products into grocery_store (gs) database through python code
+
+in mySql we use `insert into` command to insert value to our db table
+### consider this Query as a example for inserting values into products table in our gs database :
+
+```
+insert into products (name, uom_id, price_per_unit)
+values('sprite', '3', '49');
+
+```
+
+#### Output would be like : 
+<img src="https://i.ibb.co/10jDdsB/image.png"/>
+
+## lets do the same task using pyhton code :
+
