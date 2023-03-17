@@ -73,3 +73,45 @@ if __name__ == "__main__":
 
 #### now output would be like : 
 <img src="https://i.ibb.co/m4KgnPH/image.png"/>
+
+
+### route to delete prodocut :
+
+```
+@app.route('/deleteProduct', methods=['POST'])
+def delete_product():
+    return_id = products_dao.delete_product(connection, request.form['product_id'])
+    response = jsonify({
+        'product_id': return_id
+    })
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+```
+
+
+## UOM Handling 
+1. create a file name `uom_dao` and add below code in it :- 
+```
+def get_uoms(connection):
+    cursor = connection.cursor()
+    query = ("SELECT * from uom")
+    cursor.execute(query)
+
+    response = []
+    for(uom_id, uom_name) in cursor:
+        response.append({
+            'uom_id': uom_id,
+            'uom_name': uom_name
+        })
+    return response
+
+if __name__== '__main__':
+    from sql_connection import get_sql_connection
+
+    connection = get_sql_connection()
+    print(get_uoms(connection))
+
+```
+2. in `server.py` add uom rout :
+#### first import `uom_dao.py` in `server.py` then add this rout :
+```
